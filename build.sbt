@@ -6,12 +6,12 @@ import uk.gov.hmrc.versioning.SbtGitVersioning.autoImport.majorVersion
 lazy val appName: String = "stamp-taxes-on-shares-frontend"
 
 ThisBuild / majorVersion := 0
-ThisBuild / scalaVersion := "2.13.12"
+ThisBuild / scalaVersion := "3.6.4"
 
 lazy val microservice = (project in file("."))
   .enablePlugins(PlayScala, SbtDistributablesPlugin)
   .disablePlugins(JUnitXmlReportPlugin) //Required to prevent https://github.com/scalatest/scalatest/issues/1427
-  .settings(inConfig(Test)(testSettings): _*)
+  .settings(inConfig(Test)(testSettings) *)
   .settings(ThisBuild / useSuperShell := false)
   .settings(
     name := appName,
@@ -37,10 +37,6 @@ lazy val microservice = (project in file("."))
     ScoverageKeys.coverageMinimumStmtTotal := 78,
     ScoverageKeys.coverageFailOnMinimum := true,
     ScoverageKeys.coverageHighlighting := true,
-    scalacOptions ++= Seq(
-      "-feature",
-      "-Wconf:cat=deprecation:ws,cat=feature:ws,cat=optimizer:ws,src=target/.*:s"
-    ),
     libraryDependencies ++= AppDependencies(),
     retrieveManaged := true,
     resolvers ++= Seq(Resolver.jcenterRepo),
