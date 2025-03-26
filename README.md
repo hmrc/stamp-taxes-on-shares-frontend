@@ -13,10 +13,6 @@ This service is written in Scala and Play, so needs at least a JRE to run.
 ## Authentication
 This service is authenticated by Government Gateway. The user must be logged in to access the service.
 
-## More information
-
-See this page on confluence for more information: [Stamp taxes on shares home.](https://confluence.tools.tax.service.gov.uk/display/STOSM/SToSM-Stamp+Taxes+on+Shares+Modernisation+Home)
-
 ## License
 
 This code is open source software licensed under the [Apache 2.0 License]("http://www.apache.org/licenses/LICENSE-2.0.html").
